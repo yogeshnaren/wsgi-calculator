@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="{% static 'jquery-1.11.3.js' %}"></script>
+<script src="{% static 'main.js' %}"></script>
+<title>Calculator</title>
+<style>
+body { width:96%; height: 100%; font-family: calibri;	}
+table { max-width: 250px; width: 100%; border: 1px solid #CCC; margin:0 auto; vertical-align:middle; margin-top:20% }
+thead tr{ border-bottom: 1px solid #ccc; font-size: 20px;}
+table td , th { padding: 5px; }
+table td input, th input{ width: 100% }
+input[type='text'] { text-align: right; font-size:18px; padding:5px; width:94%; background-color:#000; color:#fff}
+input[type='button'] { font-size: 15px; padding:5px; cursor: pointer }
+</style>
+</head>
+
+<body>
+
+<table>
+	<thead>
+		<tr><th colspan="4">Simple Calculator</th></tr>
+	</thead>
+	<tbody>
+	<tr><td colspan="4"><input type ="text" id="inp" value="" placeholder="Enter number(Max 10000)" max="10000" name="num1"/></td></tr>
+	<tr><td colspan="4"><input type ="text" id="inp" value="" placeholder="Enter number(Max 10000)" max="10000" name="num2"/></td></tr>
+	<tr>
+		<td><input type="button" data-operator="+" class="operator" value="+" name="add"></td>
+		<td><input type="button" data-operator="-" class="operator" value="-" name="subract"></td>
+		<td colspan="2"></td>
+	</tr>
+	<tr>
+		<td><input type="button" data-operator="*" class="operator" value="*" name="multiply"></td>
+		<td><input type="button" data-operator="/" class="operator" value="/" name="divide"></td>
+		<td colspan="2"><input type="button" id="reset" value="Reset" name="clear"></td>
+	</tr>
+	<tr><td colspan="4"><input type ="text" id="inp" value="{{result}}" placeholder="Result Here" name="result" /></td></tr>
+	</tbody>
+</table>
+</body>
+</html>
